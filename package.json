@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint -c .eslintrc.js src --ext ts,tsx",
+    "format": "prettier --write src && npm run lint --fix",
+    "typecheck": "tsc -p . --noEmit"
   },
   "dependencies": {
     "react": "^18.0.0",
