@@ -1,11 +1,14 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { deleteInvoice, getInvoice } from '../data';
+import { usePrompt } from '../hooks/useRouter';
 
 export default function Invoice() {
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();
   const invoice = getInvoice(parseInt(params.invoiceId!, 10));
+
+  usePrompt('Are you leave??', invoice?.number === 1997)
 
   return (
     <main style={{ padding: '1rem' }}>
