@@ -6,7 +6,7 @@ export default function Invoice() {
   const navigate = useNavigate();
   const location = useLocation();
   const params = useParams();
-  const invoice = getInvoice(parseInt(params.invoiceId!, 10));
+  const invoice = getInvoice(parseInt(params['invoiceId']!, 10));
 
   usePrompt('Are you leave??', invoice?.number === 1997)
 
